@@ -1,0 +1,10 @@
+navigation.title: 数据库
+title: 探索数据库
+description: 生物信息相关数据库整理，以及 PacDocs 集成数据库
+navigation.icon: i-ph-database-duotone
+links:
+  - label: 'Deployment Guide'
+    icon: i-ph-cloud-duotone
+    to: '/docs/getting-started/deployment'
+    color: black
+    size: md

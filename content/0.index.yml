@@ -1,0 +1,277 @@
+navigation: false
+hero:
+  cta:
+    to: /blog/welcome
+    variant: outline
+    icon: i-ph-arrow-right
+    size: xs
+    trailing: true
+    class: 'font-semibold hover:bg-primary-100 dark:hover:bg-primary-900 rounded-full'
+logos:
+  title: 'PacDocs 由以下强力驱动'
+sections:
+  - title: '通用<span class="text-primary">大心脏</span>, <br>提供强劲<span class="text-primary">动力</span>!'
+    description: "正如引擎于汽车一般，PacDocs 也旨在为您提供一颗额外的'大心脏'，更加轻松、高效、赏心悦目的学习过程。精心整理和收集的教程、指南及资源为大心脏提供源源不断的燃油。集成附带的功能为大心脏提供持续不断的机械增压。无论怎样，都是为了增加大心脏的燃油效率，就如 PacDocs 一样，提升您的学习效率 <br/> --- Made with <span class='text-red-500'>Love</span> ❤️ by <span class='text-primary'><a target='_blank' href='https://github.com/pacmandoh/'>PacmanDoh</a></span>"
+    class: 'dark:bg-gray-900'
+    align: right
+    links:
+      - label: '关于'
+        icon: i-ph-book-bookmark
+        to: 'https://github.com/pacmandoh/3DEngine'
+        color: black
+        size: md
+      - label: 'Give me star on GitHub ✨'
+        icon: i-ph-hand-heart-duotone
+        to: 'https://github.com/pacmandoh'
+        color: gray
+        size: md
+    slot: pacdocs-engine
+  - title: '<span class="text-primary">现在</span>开始, <br><span class="text-primary">PacDocs</span> 包括什么?'
+    description: "PacDocs 不仅提供丰富的指南和资源，其集成很多开箱即用的功能和 PlayGround 游乐场，您可以使用附带的在线 IDE 来进行您的分析和项目；也可以直接通过 ssh (PacConsole或本地终端) 访问 PacDocs 的服务器来练习 Linux，使用COS储存桶、OneDrive云盘等等"
+    class: 'dark:bg-gray-900'
+    align: left
+    links:
+      - label: '阅读使用指南'
+        icon: i-ph-book-bookmark
+        to: '/docs/getting-started/views'
+        color: black
+        size: md
+      - label: '附带项目示例'
+        icon: i-ph-app-window-duotone
+        to: '/docs/examples/hello-world'
+        color: gray
+        size: md
+    slot: get-started
+  - title: '无需配置,<br><span class="text-primary">便捷快速的模版使用</span>'
+    description: '资源和指南中会提供丰富的模版以及使用技巧、心得。服务器内置了大量肿瘤生物信息学相关的常见R包、Python 模块；通用的生信分析流程模版；完备配置的 Conda 环境；TeX Live 2023；VS Code 提供各插件的配置模版: LaTeX 插件，R 插件等等；Nginx 配置模版，不费吹灰之力代理您的站点'
+    class: 'dark:bg-gray-900'
+    align: right
+    links:
+      - label: '阅读工具指南'
+        icon: i-ph-rocket-launch-duotone
+        to: '/docs/guide/concepts/rendering#hybrid-rendering'
+        color: black
+        size: md
+      - label: '最新内容'
+        icon: i-ph-newspaper-duotone
+        to: '/blog/updates'
+        color: gray
+        size: md
+    slot: code
+    code: |
+      ::code-group
+      ```r [.r]
+      library(data.table)
+      library(tidyverse)
+      # tidyverse
+      cli %>%
+        filter(if_all(starts_with('ajcc_p'), ~ . != "'--") & !duplicated(case_id)) %>%
+        select(starts_with('ajcc_p')) %>%
+        mutate(across(starts_with('ajcc_p'), ~as.numeric(as_factor(.)), .names = 'new_{.col}')) %>%
+        select(matches('^ajcc|^new', perl = T))
+
+      # data.table
+      cli[!duplicated(case_id) &
+        rowSums(cli[, grep("^ajcc_p", names(cli)), with = FALSE] == "'--") == 0][,
+        paste0('new_', grep('ajcc_p', names(cli), value = T)) :=
+        map(.SD, ~ as_factor(.) %>% as.numeric()),
+        .SDcols = patterns('^ajcc_p')][, .SD, .SDcols = patterns('^(ajcc_p|new_)')]
+      ```
+      ```py [.py]
+      # ❌ 普通循环:
+      @timeshow
+      def f_loop(n):
+        L=[]
+        for i in range(n):
+          if i % 7 ==0:
+            L.append(i)
+        return L
+
+      # ✅ 列表推导式
+      @timeshow
+      def f_list(n):
+        L = [i for i in range(n) if i % 7 == 0]
+        return L
+
+      # ✅ 迭代器
+      @timeshow
+      def f_iter(n):
+        L = (i for i in range(n) if i % 7 == 0)
+      return L
+      ```
+      ```json [.json]
+      // latex-workshop 插件配置
+      // ______        ________    ____  __
+      // ___  / ______ ___  __/______  |/ /
+      // __  /  _  __ `/_  /  _  _ \_    /
+      // _  /___/ /_/ /_  /   /  __/    |
+      // /_____/\__,_/ /_/    \___//_/|_|
+      "latex-workshop.latex.tools": [
+        {
+          "name": "tectonic",
+          "command": "tectonic",
+          "args": [
+            "-X", "compile",
+            "--keep-intermediates",
+            "--keep-logs",
+            "%DOC%.tex"
+          ]
+        }...
+      ]
+      ```
+      ```nginx [.config]
+      # 本站的nginx代理配置(省略)
+      user root;
+      worker_processes 8;
+      events {
+        worker_connections 65335;
+      }
+      ...
+      server {
+        listen 80;
+        server_name crybabyaq.love www.crybabyaq.love;
+        return 301 https://$host$request_uri;
+      }
+      server {
+        listen 443 ssl http2;
+        ssl_certificate ...
+        ssl_certificate_key ...
+        ...
+        location / {
+          root ...;
+          index index.html;
+          error_page 404 = /404.html;
+          ...
+        }
+      }
+      ```
+      ::
+  - title: '选择, 使用<br><span class="text-primary">您趁手的工具</span>'
+    class: 'dark:bg-gradient-to-b from-gray-900 to-gray-950'
+    slot: features
+    features:
+      - title: 'PacGPTs'
+        description: '跨时代的 AI (GPT, Gemini Pro...)，不用科学上网即能使用。完全不同于以前的聊天机器人，编程必备的强力工具。学习过程中结合AI，事半功倍。现可从侧边呼出，省去来回切换标签页。'
+        icon: 'i-simple-icons-openai'
+        to: 'https://chatgpt.crybabyaq.love'
+      - title: 'PacAssets'
+        description: '搭配下载站点获得丰富的资源，包括但不限于使用魔法的软件 (Win/Mac/Linux) 等等，学习过程中的代码、软件、资源等都存放在此处，免去 Google 的繁琐'
+        icon: ' i-ph-download-fill'
+        to: 'https://downloads.crybabyaq.love'
+      - title: 'PacDown'
+        description: '部署的在线 Markdown 编辑器/笔记本，集成进PacDocs，可从侧边呼出，在学习过程中的笔记可记录在此，支持导出 .md, .pdf, .docx等。本笔记本不会记录您的任何信息，请放心使用'
+        icon: 'i-ph-notebook-fill'
+        to: 'https://md.crybabyaq.love'
+      - title: 'PacConsole'
+        description: '一个 Web 终端，通过网页来控制服务器，集成进 PacDocs 能更好的提供 PlayGround 游乐场，在 Shell/Linux 指南中提供一个边学边练习的即时无缝体验'
+        icon: 'i-ph-terminal-window-duotone'
+        to: 'https://console.crybabyaq.love'
+      - title: 'Code-Server'
+        description: '如何使用 code-server 以及插件配置，提供案例以及在线服务。预装了 R、Python、LaTeX、Nuxt、Vue 等插件，ssh 登录后运行 `code-server` 即可启动'
+        icon: 'i-simple-icons-visualstudiocode'
+        to: 'https://code.crybabyaq.love'
+      - title: 'RStudio'
+        description: '已经安装大量生信相关 R 包，使用服务器账号密码即可登录使用。不间断提供分析、进阶模版，学习如何优化代码性能。相比 Code-server 直接登录即可使用'
+        icon: 'i-simple-icons-rstudio'
+        to: 'https://rstudio.crybabyaq.love'
+      - title: 'Jupyter'
+        description: 'Jupyter 的使用，插件推荐，已配置完毕 R 内核，Python/R 都自由运行。独到的 Markdown 结合相关语言代码，能让整个代码的思维过程都呈现在其中'
+        icon: 'i-simple-icons-jupyter'
+        to: 'https://jupyter.crybabyaq.love'
+      - title: 'COS Bucket'
+        description: 'COS 对象存储桶，是无目录层次结构、无数据格式限制，可容纳海量数据的分布式存储服务。用作图床是无敌完美的选择，服务器已经通过 `rclone` 接入储存桶作为本地目录，随时调用'
+        icon: 'i-mdi-bucket-outline'
+        to: 'https://www.tencentcloud.com/zh/account/login?s_url=https%3A%2F%2Fconsole.tencentcloud.com%2Fcos'
+      - title: 'Conda'
+        description: '数据科学等领域必备的工具，bioconda 给生物领域提供了丰富的工具包。主要用于 Python、R 等语言的包/模块管理；环境隔离: 让不同版本，多个大型模块都位于独立的环境中，互不干扰'
+        icon: 'i-simple-icons-anaconda'
+        to: '/docs/getting-started/layers'
+      - title: 'TeX Live 2023'
+        description: 'LaTeX、TeX 编译环境。包含了大部分的中英文论文相关宏包，完整的编译链配置，如果您不熟悉 CLI 界面，可直接使用 Code-Server 来进行编译导出。也包括了很多相关的模版'
+        icon: 'i-simple-icons-latex'
+        to: '/docs/getting-started/server'
+      - title: 'Channel.io'
+        description: '引入 Channel.io，一个即时的聊天系统，一些比较着急的需求或者问题都可通过该功能联系我: 比如 COS Bucket 的授权 api key、各种访问密码等等，或者一些改进性的建议'
+        icon: 'i-ph-chat-duotone'
+        to: '/docs/guide/concepts/auto-imports'
+      - title: '继续开发补充中...'
+        description: '未完待续...'
+        icon: 'i-ph-rocket-launch'
+        to: '/blog/updates'
+  - title: '渐进式指南<br><span class="text-primary">所包含的内容</span>'
+    description: "'渐进式'这个词借鉴了 Vue.js 的描述，旨在为不同阶段的学习者提供一点微不足道的帮助。何为渐进？在 PacDocs 中您可以根据自己的节奏和理解来逐渐学习和应用，PacDocs 会尽力提供各阶段相应的指南，一点一点逐渐进步。PacDocs 包含了左侧相关语言和工具技术，但也不仅只有这些"
+    class: 'dark:bg-gray-900 dark:!bg-gradient-to-b from-gray-950 to-gray-900'
+    align: left
+    links:
+      - label: '探索进阶指南'
+        icon: i-ph-anchor-simple-bold
+        to: '/modules'
+        color: black
+        size: md
+      - label: '关于进阶指南'
+        icon: i-ph-info-duotone
+        to: '/docs/guide/concepts/modules'
+        color: gray
+        size: md
+    slot: integrations
+    integrations:
+      - src: /assets/integrations/js.svg
+        alt: js-icon
+        to: https://vercel.com/docs/frameworks/nuxt
+      - src: /assets/integrations/ts.svg
+        alt: ts-icon
+        to: https://vercel.com/docs/frameworks/nuxt
+      - src: /assets/integrations/html.svg
+        alt: html-icon
+        to: https://aws.amazon.com/
+      - src: /assets/integrations/css.svg
+        alt: css-icon
+        to: https://www.digitalocean.com/
+      - src: /assets/integrations/git.svg
+        alt: git-icon
+        to: https://docs.netlify.com/integrations/frameworks/nuxt/
+      - src: /assets/integrations/vue.svg
+        alt: vue-icon
+        to: /modules/tailwindcss
+      - src: /assets/integrations/nuxt.svg
+        alt: nuxtjs-icon
+        to: /modules/supabase
+      - src: /assets/integrations/tailwind.svg
+        alt: tailwind-icon
+        to: /modules/supabase
+      - src: /assets/integrations/r.svg
+        alt: r-lang-icon
+        to: https://stripe.com/
+      - src: /assets/integrations/perl.svg
+        alt: perl-icon
+        to: /modules/vuefire
+      - src: /assets/integrations/java.svg
+        alt: java-icon
+        to: /modules/strapi
+      - src: /assets/integrations/py.svg
+        alt: python-icon
+        to: https://wordpress.org/
+      - src: /assets/integrations/latex.svg
+        alt: latex-icon
+        to: /modules/directus
+      - src: /assets/integrations/vim.svg
+        alt: vim-icon
+        to: /modules/storyblok
+      - src: /assets/integrations/linux.svg
+        alt: linux-icon
+        to: /modules/sanity
+      - src: /assets/integrations/cpp.svg
+        alt: cpp-icon
+        to: https://sentry.io/
+      - src: /assets/integrations/md.svg
+        alt: markdown-icon
+        to: https://www.shopify.com/
+      - src: /assets/integrations/nginx.svg
+        alt: nginx-icon
+        to: /modules/snipcart
+      - src: /assets/integrations/ai.svg
+        alt: adobeillustrator-icon
+        to: /modules/meilisearch
+      - src: /assets/integrations/ps.svg
+        alt: photoshop-icon
+        to: /modules/algolia

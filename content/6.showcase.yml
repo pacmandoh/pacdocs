@@ -1,0 +1,23 @@
+title: 展示
+head.title: Nuxt 展示
+description: 探索由 Nuxt 构建的网站，本展示集合由 VueTelescope 提供支持
+navigation.icon: i-ph-app-window-duotone
+links:
+  - label: 'Chrome'
+    size: 'md'
+    color: 'gray'
+    to: 'https://chrome.google.com/webstore/detail/vue-telescope/neaebjphlfplgdhedjdhcnpjkndddbpd'
+    icon: 'i-logos-chrome'
+    target: '_blank'
+  - label: 'Firefox'
+    size: 'md'
+    color: 'gray'
+    to: 'https://addons.mozilla.org/en/firefox/addon/vue-telescope/'
+    icon: 'i-logos-firefox'
+    target: '_blank'
+  - label: 'Edge'
+    size: 'md'
+    color: 'gray'
+    to: 'https://microsoftedge.microsoft.com/addons/detail/vue-telescope/icgcillpgelpleniodgkmohgdmeogodl'
+    icon: 'i-logos-microsoft-edge'
+    target: '_blank'

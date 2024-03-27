@@ -1,0 +1,16 @@
+navigation: false
+title: 'Pac<span class="text-primary">Docs</span> 时间线'
+head.title: Releases
+description: 追溯 PacDocs 的发展历程，追寻 PacDocs 的最新发布
+links:
+  - label: 了解更多
+    trailingIcon: i-heroicons-arrow-right-20-solid
+    to: /blog/releases
+    size: md
+    color: black
+  - label: GitHub
+    icon: i-simple-icons-github
+    to: https://github.com/pacmandoh/pacdocs/releases
+    target: _blank
+    size: md
+    color: white

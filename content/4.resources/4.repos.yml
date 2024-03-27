@@ -1,0 +1,11 @@
+title: 探索 GitHub 库
+description: 精彩绝伦的 GitHub 开源库推荐
+navigation.title: GitHub 库推荐
+head.title: 'GitHub 库推荐'
+navigation.icon: i-mdi-github-face
+links:
+  - label: '访问 GitHub'
+    to: 'https://github.com'
+    color: black
+    size: 'lg'
+    target: '_blank'

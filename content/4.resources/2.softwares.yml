@@ -1,0 +1,12 @@
+title: 软件推荐
+navigation.title: 软件推荐
+description: 各种提升效率、专业、好用、有趣的软件推荐，软件合集、资源下载、软件教程和软件推荐
+head.title: '软件推荐'
+head.description: 软件合集，软件资源下载，软件教程和软件推荐
+navigation.icon: i-ph-fire-fill
+links:
+  - label: '友情链接'
+    to: 'https://github.com/pacmandoh'
+    color: black
+    size: 'lg'
+    target: '_blank'

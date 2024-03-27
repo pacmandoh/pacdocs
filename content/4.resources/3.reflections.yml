@@ -1,0 +1,11 @@
+title: 随笔心得
+description: 在此记录身心成长、学习过程中的心得体会
+navigation.title: '随笔心得'
+head.description: 在此记录身心成长、学习过程中的心得体会
+navigation.icon: i-ph-hand-heart-duotone
+links:
+  - label: '友情链接'
+    to: 'https://github.com/pacmandoh'
+    color: 'black'
+    size: 'lg'
+    target: '_blank'
