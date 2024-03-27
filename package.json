@@ -11,7 +11,7 @@
     "lint": "eslint .",
     "typecheck": "nuxi typecheck",
     "test": "pnpm lint && pnpm typecheck",
-    "release": "pnpm changelogithub"
+    "release": "bumpp -r"
   },
   "dependencies": {
     "@channel.io/channel-web-sdk-loader": "^1.1.7",
@@ -55,7 +55,9 @@
     "@nuxt/test-utils": "^3.12.0",
     "@octokit/rest": "^20.0.2",
     "@testing-library/vue": "^8.0.3",
+    "bumpp": "^9.4.0",
     "capture-website": "^4.1.0",
+    "changelogithub": "^0.13.5",
     "date-fns": "^3.6.0",
     "eslint": "^8.57.0",
     "nuxt-build-cache": "^0.1.1",
