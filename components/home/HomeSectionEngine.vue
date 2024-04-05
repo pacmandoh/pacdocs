@@ -27,7 +27,7 @@
       width="100%"
       height="100%"
       :on-load="isLoading = false"
-      src="https://model.crybabyaq.love/?needBottomButton=false&needDropdown=false"
+      src="https://model.crybabyaq.love/?nobutton&nozoom"
       title="3D Engine for PacDocs"
       frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;"
