@@ -14,15 +14,6 @@ useSeoMeta({
   ogTitle: `${title} · PacDocs`
 })
 
-defineOgImageComponent(
-  'Docs',
-  {
-    title: title,
-    description: description,
-    headline: ''
-  }
-)
-
 await fetchList()
 </script>
 

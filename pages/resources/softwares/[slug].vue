@@ -28,14 +28,9 @@ useSeoMeta({
   ogTitle: `${title} · 软件推荐`
 })
 
-defineOgImageComponent(
-  'Docs',
-  {
-    title: title,
-    description: description,
-    headline: '软件推荐'
-  }
-)
+defineOgImageComponent('Docs', {
+  headline: '软件推荐'
+})
 </script>
 
 <template>

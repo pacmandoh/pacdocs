@@ -1,8 +1,4 @@
 <script lang="ts" setup>
-defineOptions({
-  inheritAttrs: false
-})
-
 defineProps({
   title: {
     type: String,
@@ -56,7 +52,7 @@ defineProps({
       <h1 class="m-0 text-[75px] font-semibold mb-4 text-white flex items-center">
         <span>{{ title }}</span>
       </h1>
-      <p class="text-[32px] text-[#E4E4E7] leading-tight">
+      <p v-if="description" class="text-[32px] text-[#E4E4E7] leading-tight">
         {{ description.slice(0, 200) }}
       </p>
     </div>
@@ -69,8 +65,8 @@ defineProps({
       y="0px"
       viewBox="0 0 512 512"
       style="enable-background:new 0 0 512 512;"
-      xml:space="preserve" 
-      width="340" 
+      xml:space="preserve"
+      width="340"
       height="340"
       class="absolute top-[160px] right-[90px]"
     >

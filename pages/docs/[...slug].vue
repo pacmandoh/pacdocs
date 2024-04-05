@@ -100,14 +100,9 @@ useSeoMeta({
   ogTitle: titleTemplate.value?.includes('%s') ? titleTemplate.value.replace('%s', title) : title
 })
 
-defineOgImageComponent(
-  'Docs',
-  {
-    title: title,
-    description: description,
-    headline: breadcrumb.value.length ? breadcrumb.value.map(link => link.label).join(' > ') : ''
-  }
-)
+defineOgImageComponent('Docs', {
+  headline: breadcrumb.value.length ? breadcrumb.value.map(link => link.label).join(' > ') : ''
+})
 </script>
 
 <template>

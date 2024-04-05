@@ -28,14 +28,9 @@ useSeoMeta({
   ogTitle: `${title} · 分析模块`
 })
 
-defineOgImageComponent(
-  'Docs',
-  {
-    title: title,
-    description: description,
-    headline: '分析模块'
-  }
-)
+defineOgImageComponent('Docs', {
+  headline: '分析模块'
+})
 </script>
 
 <template>

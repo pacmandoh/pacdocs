@@ -12,15 +12,6 @@ useSeoMeta({
   ogDescription: description,
   ogTitle: title
 })
-
-defineOgImageComponent(
-  'Docs',
-  {
-    title: title,
-    description: description,
-    headline: ''
-  }
-)
 </script>
 
 <template>

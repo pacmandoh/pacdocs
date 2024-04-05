@@ -12,15 +12,6 @@ useSeoMeta({
   ogDescription: description,
   ogTitle: `${title} · PacDocs 集成`
 })
-
-defineOgImageComponent(
-  'Docs',
-  {
-    title: title,
-    description: description,
-    headline: ''
-  }
-)
 </script>
 
 <template>

@@ -47,6 +47,8 @@ useSeoMeta({
   twitterSite: '@haodou20'
 })
 
+defineOgImageComponent('Docs')
+
 watch(() => search.value?.commandPaletteRef?.query, debounce((query: string) => {
   if (!query) {
     return

@@ -17,15 +17,6 @@ useSeoMeta({
   ogTitle: `${title} · PacDocs 集成`
 })
 
-defineOgImageComponent(
-  'Docs',
-  {
-    title: title,
-    description: description,
-    headline: ''
-  }
-)
-
 await fetchList()
 
 const featuredProviders = computed(() => databases.value.filter((database: Database) => database.featured === true))

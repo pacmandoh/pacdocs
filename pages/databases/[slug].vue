@@ -28,14 +28,9 @@ useSeoMeta({
   ogTitle: `在 PacDocs 中探索 ${title}`
 })
 
-defineOgImageComponent(
-  'Docs',
-  {
-    title: title,
-    description: description,
-    headline: '探索数据库'
-  }
-)
+defineOgImageComponent('Docs', {
+  headline: '探索数据库'
+})
 
 const links = []
 if (database.value?.website) {
