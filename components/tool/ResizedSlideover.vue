@@ -26,7 +26,7 @@ const props = withDefaults(defineProps<{
 })
 
 const isOpen = ref(false)
-const { width } = useWindowSize()
+const { width } = useSharedWindowSize()
 const initWidth = ref(props.initwidth)
 const isResizing = ref(false)
 const isClick = ref(true)

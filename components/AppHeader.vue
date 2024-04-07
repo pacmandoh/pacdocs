@@ -45,7 +45,7 @@ defineProps<{
   links?: Link[]
 }>()
 const { y } = useWindowScroll()
-const { width } = useWindowSize()
+const { width } = useSharedWindowSize()
 </script>
 
 <template>

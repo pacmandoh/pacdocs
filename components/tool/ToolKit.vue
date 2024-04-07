@@ -9,7 +9,7 @@ const displayed = 2
 const hidden = -40
 
 const el = ref<HTMLElement | null>(null)
-const { height } = useWindowSize()
+const { height } = useSharedWindowSize()
 const { height: elHeight } = useElementSize(el)
 const { y: scrollY } = useWindowScroll()
 const isHovered = useElementHover(el)

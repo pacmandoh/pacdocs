@@ -6,7 +6,7 @@ import './styles/twoslash.css'
 const config = useRuntimeConfig().public
 const search = ref(null)
 const colorMode = useColorMode()
-const { width } = useWindowSize()
+const { width } = useSharedWindowSize()
 const { headerLinks, searchGroups, searchLinks } = useNavigation()
 
 // mobile safari top bar bgColor
