@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { withoutTrailingSlash, joinURL } from 'ufo'
+import { withoutTrailingSlash } from 'ufo'
 import type { BlogArticle } from '~/types'
 
 const route = useRoute()
