@@ -94,6 +94,13 @@ const handleClick = () => {
     initWidth.value = resized.value
   }
 }
+
+watch(width, () => {
+  if (resized.value > width.value) {
+    resized.value = width.value
+    initWidth.value = width.value
+  }
+})
 </script>
 
 <template>
