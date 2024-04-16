@@ -4,6 +4,7 @@ import type { Link } from '#ui-pro/types'
 
 const logo = ref(null)
 const navigation = inject<Ref<NavItem[]>>('navigation')
+const version = computed(() => useRuntimeConfig().public.version?.match(/[0-9]+\.[0-9]+/)[0])
 
 const { metaSymbol } = useShortcuts()
 const { copy } = useCopyToClipboard()
@@ -68,21 +69,28 @@ const { width } = useSharedWindowSize()
           item: { padding: 'gap-x-2.5 py-2.5', inactive: 'dark:bg-gray-950' }
         }"
       >
-        <div class="block w-auto" @click.right.prevent="openLogoContext" @click.left.prevent="navigateTo('/')">
-          <div class="flex items-center">
-            <div class="w-10">
-              <LogoBrandingIcon ref="logo" />
-            </div>
-            <div class="hidden sm:block self-center whitespace-nowrap leading-[10px] ml-2 dark:sidebase-green-400 pr-0" style="user-select: none; -webkit-user-select: none;">
-              <h1 class="font-CooperHewitt my-0 text-2xl font-normal leading-5 pt-1">
-                Pac<span class="text-primary-500 dark:text-primary-400 font-light">Docs</span>
-              </h1>
-              <h2 class="my-0 pl-[1px] text-xs font-light dark:text-gray-300 text-gray-700">
-                by PacmanDoh
-              </h2>
+        <NuxtLink to="/" class="flex gap-2 items-center">
+          <div class="block w-auto" @click.right.prevent="openLogoContext" @click.left.prevent="navigateTo('/')">
+            <div class="flex items-center">
+              <div class="w-10">
+                <LogoBrandingIcon ref="logo" />
+              </div>
+              <div class="hidden sm:block self-center whitespace-nowrap leading-[10px] ml-1 dark:sidebase-green-400 pt-1" style="user-select: none; -webkit-user-select: none;">
+                <h1 class="font-CooperHewitt my-0 text-2xl font-normal leading-5">
+                  Pac<span class="text-primary-500 dark:text-primary-400 font-light">Docs</span>
+                </h1>
+                <h2 class="my-0 pl-[1px] text-xs font-light dark:text-gray-300 text-gray-700">
+                  by PacmanDoh
+                </h2>
+              </div>
             </div>
           </div>
-        </div>
+          <UTooltip v-if="version" :text="`Latest release: v${useRuntimeConfig().public.version}`">
+            <UBadge variant="subtle" size="xs" class="-mb-[2px] rounded font-semibold">
+              v{{ version }}
+            </UBadge>
+          </UTooltip>
+        </NuxtLink>
       </UDropdown>
       <ClientOnly>
         <UTooltip v-if="width < 640" text="工具">
