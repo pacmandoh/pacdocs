@@ -218,6 +218,15 @@ export default defineNuxtConfig({
       }
     }
   },
+  // ogImage support Chinese
+  ogImage: {
+    fonts: [
+      'Noto+Sans+SC:400',
+      'Noto+Sans+SC:500',
+      'Noto+Sans+SC:600',
+      'Noto+Sans+SC:700'
+    ]
+  },
   typescript: {
     strict: false
   },
