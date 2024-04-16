@@ -1,10 +1,10 @@
 <script setup lang="ts">
 const props = withDefaults(defineProps<{
-  label: string,
-  lineType?: string,
-  orientation?: string,
-  size?: string,
-  wrapper?: string,
+  label: string
+  lineType?: string
+  orientation?: string
+  size?: string
+  wrapper?: string
   icon?: string
 }>(), {
   lineType: 'solid',

@@ -4,7 +4,7 @@ const _useNavigation = () => {
   const route = useRoute()
   const router = useRouter()
 
-  function select (branch: { id: string }) {
+  function select(branch: { id: string }) {
     router.push(['/docs', route.params.slug?.[0], branch.id].filter(Boolean).join('/'))
   }
 
@@ -381,7 +381,7 @@ const _useNavigation = () => {
     }]
   }]
 
-  const searchLinks = computed(() => [...headerLinks.value.map(link => {
+  const searchLinks = computed(() => [...headerLinks.value.map((link) => {
     // Remove `/docs` and `/enterprise` links from command palette
     if (link.search === false) {
       return {
@@ -447,9 +447,11 @@ const _useNavigation = () => {
           label: database.title,
           suffix: database.description,
           icon: database.logoIcon,
-          avatar: database.logoSrc ? {
-            src: database.logoSrc
-          } : undefined,
+          avatar: database.logoSrc
+            ? {
+                src: database.logoSrc
+              }
+            : undefined,
           to: database._path
         }))
     }

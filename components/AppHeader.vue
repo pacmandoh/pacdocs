@@ -16,16 +16,16 @@ const mobileNav = computed(() => {
 const open = ref(false)
 const dropdownItems = [
   [{
-     label: '复制 Logo SVG',
-     icon: 'i-ph-copy-duotone',
-     click: () => copy(logo.value.$el.outerHTML, { title: '复制至剪切板!' })
-   },
-   {
-     label: 'PacDocs 设计套件',
-     icon: 'i-simple-icons-figma',
-     to: 'https://www.figma.com/community/file/1296154408275753939/nuxt-brand-kit',
-     target: '_blank'
-   }],
+    label: '复制 Logo SVG',
+    icon: 'i-ph-copy-duotone',
+    click: () => copy(logo.value.$el.outerHTML, { title: '复制至剪切板!' })
+  },
+  {
+    label: 'PacDocs 设计套件',
+    icon: 'i-simple-icons-figma',
+    to: 'https://www.figma.com/community/file/1296154408275753939/nuxt-brand-kit',
+    target: '_blank'
+  }],
   [{
     label: '浏览设计套件',
     icon: 'i-ph-shapes-duotone',
@@ -33,7 +33,7 @@ const dropdownItems = [
   }]
 ]
 const isMobile = ref(false)
-function openLogoContext () {
+function openLogoContext() {
   if (isMobile.value) return navigateTo('/')
   open.value = true
 }
@@ -65,7 +65,7 @@ const { width } = useSharedWindowSize()
         :ui="{
           container: 'mt-8',
           background: 'bg-white dark:bg-gray-950',
-          item: { padding: 'gap-x-2.5 py-2.5', inactive: 'dark:bg-gray-950' },
+          item: { padding: 'gap-x-2.5 py-2.5', inactive: 'dark:bg-gray-950' }
         }"
       >
         <div class="block w-auto" @click.right.prevent="openLogoContext" @click.left.prevent="navigateTo('/')">

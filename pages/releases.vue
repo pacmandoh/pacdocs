@@ -52,7 +52,7 @@ const dates = computed(() => {
 
   const days = eachDayOfInterval({ start: new Date(first.published_at), end: new Date() })
 
-  return days.reverse().map(day => {
+  return days.reverse().map((day) => {
     return {
       day,
       release: releases.value.find(release => isSameDay(new Date(release.published_at), day)),
@@ -70,7 +70,6 @@ useSeoMeta({
   ogTitle: `${title} - PacDocs`,
   ogDescription: description
 })
-
 </script>
 
 <style scoped>

@@ -8,8 +8,8 @@
     y="0px"
     viewBox="0 0 512 512"
     style="enable-background:new 0 0 512 512;"
-    xml:space="preserve" 
-    width="70" 
+    xml:space="preserve"
+    width="70"
     height="23"
   >
     <path

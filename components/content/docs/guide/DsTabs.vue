@@ -8,7 +8,6 @@ const items = [{
   icon: 'i-ph-dots-three-circle-duotone',
   label: '其他'
 }]
-
 </script>
 
 <template>
@@ -56,4 +55,3 @@ const items = [{
     </template>
   </UTabs>
 </template>
-

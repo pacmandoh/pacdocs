@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import colors from '#tailwind-config/theme/colors'
+
 const colorMode = useColorMode()
 const appConfig = useAppConfig()
 
@@ -125,7 +126,7 @@ const tailwindColorToRgb = [{
 
 const items = computed(() => {
   const getColorRgb = (colorName: string) => {
-    const color = tailwindColorToRgb.find((color) => color.name === colorName.toLowerCase())
+    const color = tailwindColorToRgb.find(color => color.name === colorName.toLowerCase())
     if (color) {
       const preference = colorMode.preference === 'dark' ? 400 : 500
       return color.rgb[preference]
@@ -134,7 +135,7 @@ const items = computed(() => {
   }
 
   const getColorHex = (colorName: string) => {
-    const color = primaryColors.value.find((color) => color.value === colorName)
+    const color = primaryColors.value.find(color => color.value === colorName)
     return color.hex
   }
 
@@ -175,4 +176,3 @@ const rows = computed(() => {
     </div>
   </div>
 </template>
-

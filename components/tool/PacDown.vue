@@ -50,7 +50,7 @@ const option: IOptions = {
     //   }
     // },
     fieldName: 'file',
-    success (_, msg) {
+    success(_, msg) {
       vditor.value.insertValue(`![${JSON.parse(msg).date}](${JSON.parse(msg).file_url})`)
     }
   },
@@ -94,7 +94,6 @@ const destroyVditor = () => {
 const transCache = () => {
   if (localStorage.getItem('vditor')) localStorage.setItem('pacdown', localStorage.getItem('vditor'))
 }
-
 
 onMounted(() => {
   transCache()

@@ -3,14 +3,14 @@ import { debounce } from 'perfect-debounce'
 import type { ParsedContent } from '@nuxt/content/dist/runtime/types'
 import './styles/twoslash.css'
 
+// mobile safari top bar bgColor
+import colors from '#tailwind-config/theme/colors'
+
 const config = useRuntimeConfig().public
 const search = ref(null)
 const colorMode = useColorMode()
 const { width } = useSharedWindowSize()
 const { headerLinks, searchGroups, searchLinks } = useNavigation()
-
-// mobile safari top bar bgColor
-import colors from '#tailwind-config/theme/colors'
 
 const appConfig = useAppConfig()
 const grayColors = computed(() => ['slate', 'cool', 'zinc', 'neutral', 'stone'].map(color => ({ value: color, text: color, hex: colors[color][950] })))

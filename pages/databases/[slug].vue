@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import type { Database } from '~/types'
 import { withoutTrailingSlash } from 'ufo'
+import type { Database } from '~/types'
 
 const route = useRoute()
 const { slug } = route.params

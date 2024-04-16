@@ -14,7 +14,7 @@
     <UIcon :name="copied ? 'i-ph-check' : 'i-ph-copy'" class="w-5 h-5 col-span-1 justify-self-end" :class="[copied ? 'text-primary-500 dark:text-primary-400' : 'dark:text-gray-300 text-gray-700 opacity-50']" />
   </UButton>
 </template>
-  
+
 <script setup lang="ts">
 defineProps({
   background: {

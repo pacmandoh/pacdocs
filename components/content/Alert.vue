@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type uiColors from '#ui-colors'
+
 const props = defineProps({
   title: { type: String, required: true },
   icon: { type: String, required: true },

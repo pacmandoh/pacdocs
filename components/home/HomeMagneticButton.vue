@@ -2,7 +2,7 @@
   <NuxtLink
     ref="mbtn"
     class="focus:outline-none focus-visible:outline-0 disabled:cursor-not-allowed disabled:opacity-75 flex-shrink-0 font-medium rounded-md text-base gap-x-2.5 px-3.5 py-2.5 shadow-sm ring-1 ring-offset-4 ring-gray-300 dark:ring-gray-700 ring-offset-white dark:ring-offset-gray-900 text-gray-900 dark:text-white bg-white disabled:bg-white dark:bg-gray-900  dark:disabled:bg-gray-900 focus-visible:ring-2 focus-visible:ring-primary-500 dark:focus-visible:ring-primary-400 inline-flex items-center relative btn hover:ring-primary-500 dark:hover:ring-primary-400 hover:text-white hover:dark:text-gray-900 group"
-    :to="to" 
+    :to="to"
     :target="target"
     :style="{ '--x': `${elementX}px`, '--y': `${elementY}px`, '--clr': clr, 'transform': transform }"
   >
@@ -10,9 +10,9 @@
     <span class="z-10">
       {{ label }}
     </span>
-  </NuxtLink> 
+  </NuxtLink>
 </template>
-  
+
 <script setup lang="ts">
 export interface Props {
   to: string
@@ -41,7 +41,6 @@ const transform = computed(() => {
 onBeforeUnmount(() => {
   stop()
 })
-
 </script>
 
 <style scoped>

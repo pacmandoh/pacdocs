@@ -7,7 +7,7 @@ export const useResourcesSoftwares = () => {
   const softwares = useState<Software[]>('resources-softwares', () => [])
 
   // Data fetching
-  async function fetchList () {
+  async function fetchList() {
     if (softwares.value.length) {
       return
     }
@@ -27,12 +27,13 @@ export const useResourcesSoftwares = () => {
         })),
         platform: software.platform
           ? {
-            key: slugify(software.platform),
-            label: software.platform
-          }
+              key: slugify(software.platform),
+              label: software.platform
+            }
           : null
       })) as Software[]
-    } catch (e) {
+    }
+    catch (e) {
       softwares.value = []
       return e
     }

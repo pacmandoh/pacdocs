@@ -17,7 +17,7 @@
         :style="{
           top: Math.random() * 100 + '%',
           animationDelay: Math.random() * 1 + 's',
-          animationDuration: streakSpeed,
+          animationDuration: streakSpeed
         }"
         class="streak absolute left-0 w-1/5 h-0.5 bg-gradient-to-r from-transparent to-black/60 dark:to-white/60"
       />
@@ -46,7 +46,7 @@ const isSafari = ref<boolean>()
 
 onMounted(() => {
   isSafari.value = navigator.userAgent.includes('Safari') && !navigator.userAgent.includes('Chrome')
-  if (isSafari) {
+  if (isSafari.value) {
     const { isScrolling: useIsScrolling } = useScroll(window, { throttle: 100 })
     watch(useIsScrolling, () => {
       isScrolling.value = useIsScrolling.value

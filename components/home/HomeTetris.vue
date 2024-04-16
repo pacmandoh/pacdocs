@@ -36,7 +36,7 @@ const cols = ref(0)
 
 const { width, height } = useElementSize(el)
 
-function createGrid () {
+function createGrid() {
   grid.value = []
 
   for (let i = 0; i <= rows.value; i++) {
@@ -44,13 +44,13 @@ function createGrid () {
   }
 }
 
-function createNewCell () {
+function createNewCell() {
   const x = Math.floor(Math.random() * cols.value)
 
   grid.value[0][x] = true
 }
 
-function moveCellsDown () {
+function moveCellsDown() {
   for (let row = rows.value - 1; row >= 0; row--) {
     for (let col = 0; col < cols.value; col++) {
       if (grid.value[row][col] !== null && grid.value[row + 1][col] === null) {
@@ -69,11 +69,11 @@ function moveCellsDown () {
   }, 500)
 }
 
-function removeCell (row, col) {
+function removeCell(row, col) {
   grid.value[row][col] = null
 }
 
-function calcGrid () {
+function calcGrid() {
   const base = Math.ceil(width.value / 60)
   const cell = width.value / base
 

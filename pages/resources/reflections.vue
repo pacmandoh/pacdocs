@@ -1,12 +1,10 @@
 <script setup lang="ts">
-
 const route = useRoute()
 
 const { data: page } = await useAsyncData(route.path, () => queryContent(route.path).findOne())
 if (!page.value) {
   throw createError({ statusCode: 404, statusMessage: '这似乎不是您要寻找的页面', fatal: true })
 }
-
 
 const title = page.value.head?.title || page.value.title
 const description = page.value.head?.description || page.value.description

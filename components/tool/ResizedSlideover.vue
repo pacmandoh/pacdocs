@@ -2,15 +2,15 @@
 import type { ButtonSize } from '#ui/types'
 
 const props = withDefaults(defineProps<{
-  iframe?: boolean,
-  initwidth?: number,
-  duration?: number,
-  overlay?: boolean,
-  color?: string,
-  size?: string,
-  icon: string,
-  rounded: string,
-  label?: string,
+  iframe?: boolean
+  initwidth?: number
+  duration?: number
+  overlay?: boolean
+  color?: string
+  size?: string
+  icon: string
+  rounded: string
+  label?: string
   closePostion?: string
 }>(), {
   iframe: false,
@@ -48,7 +48,8 @@ const resized = computed({
         initWidth.value = width.value
       }
       source.value = isMagnetic.value ? width.value : value
-    } else {
+    }
+    else {
       source.value = value
     }
   }
@@ -88,7 +89,8 @@ const handleClick = () => {
   if (isClick.value) {
     if (resized.value >= width.value / 2) {
       resized.value = resized.value === width.value ? props.initwidth : width.value
-    } else {
+    }
+    else {
       resized.value = width.value / 2
     }
     initWidth.value = resized.value

@@ -1,6 +1,6 @@
 const useContentExamplesCodeState = () => useState('content-examples-code', () => ({}))
 
-export async function fetchContentExampleCode (name?: string) {
+export async function fetchContentExampleCode(name?: string) {
   if (!name) return
   const state = useContentExamplesCodeState()
 
@@ -8,10 +8,12 @@ export async function fetchContentExampleCode (name?: string) {
     await state.value[name]
     return state.value[name]
   }
-  if (state.value[name]) { return state.value[name] }
+  if (state.value[name]) {
+    return state.value[name]
+  }
 
   // add to nitro prerender
-  if (process.server) {
+  if (import.meta.server) {
     const event = useRequestEvent()
     event.node.res.setHeader(
       'x-nitro-prerender',

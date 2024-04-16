@@ -1,6 +1,6 @@
 import type { ParsedContent } from '@nuxt/content/dist/runtime/types'
-import type { Link } from '#ui-pro/types'
 import type { Filter } from './filters'
+import type { Link } from '#ui-pro/types'
 
 export interface Software extends ParsedContent {
   title: string

@@ -4,7 +4,7 @@ const preferNoBanner = () => {
   document.querySelector('html')?.classList.add('hide-banner')
 }
 
-if (process.server) {
+if (import.meta.server) {
   useHead({
     script: [
       {

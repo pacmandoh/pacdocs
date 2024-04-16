@@ -34,7 +34,8 @@ useSeoMeta({
 
 if (article.value.image) {
   defineOgImage({ url: article.value.image })
-} else {
+}
+else {
   defineOgImageComponent('Docs', {
     headline: 'Blog'
   })
@@ -49,7 +50,7 @@ const socialLinks = computed(() => [{
   to: `https://twitter.com/intent/tweet?text=${encodeURIComponent(`${article.value.title}${authorTwitter ? ` by @${article.value.authors[0].twitter}` : ''}\n\n`)}https://nuxt.com${article.value._path}`
 }])
 
-function copyLink () {
+function copyLink() {
   copy(`https://crybabyaq.love${article.value._path}`, { title: '成功复制至剪切板' })
 }
 const links = [

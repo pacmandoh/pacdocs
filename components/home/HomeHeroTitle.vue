@@ -12,7 +12,7 @@
       <span>
         <span class="absolute bg-gradient-to-r from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-500/80 animate-fadecolorR" style="-webkit-text-fill-color: transparent; override-colors: transparent; -webkit-background-clip: text;">渐进式指南</span>
         <span class="text-transparent bg-[length:200%_auto] bg-clip-text bg-[60%_center] bg-gray-900 dark:bg-gray-200" style="-webkit-background-clip: text;">渐进式指南</span>
-      </span> 
+      </span>
       <span class="flex 2xl:h-[3.75rem] 2xl:w-[3.75rem] lg:w-[3rem] lg:h-[3rem] md:w-[2.25rem] md:h-[2.25rem] min-[375px]:w-[1.5rem] min-[375px]:h-[1.5rem] min-[398px]:h-[1.875rem] min-[398px]:w-[1.875rem]">
         <HomeHeroLogo />
       </span>

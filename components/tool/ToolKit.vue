@@ -18,10 +18,10 @@ const { unread } = useChannel()
 const { y } = useDraggable(el, {
   initialValue: { x: displayed, y: height.value / displayed - 85 },
   preventDefault: true,
-  onStart () {
+  onStart() {
     isMousedown.value = true
   },
-  onEnd () {
+  onEnd() {
     isMousedown.value = false
   }
 })

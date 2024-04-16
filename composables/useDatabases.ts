@@ -3,7 +3,7 @@ import type { Database } from '../types'
 export const useDatabases = () => {
   const databases = useState<Database[]>('databases', () => [])
 
-  async function fetchList () {
+  async function fetchList() {
     if (databases.value.length) {
       return
     }
@@ -16,7 +16,8 @@ export const useDatabases = () => {
         .find()
 
       databases.value = (data as Database[]).filter(article => article._path !== '/databases')
-    } catch (e) {
+    }
+    catch (e) {
       databases.value = []
       return e
     }

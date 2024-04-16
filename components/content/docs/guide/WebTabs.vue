@@ -12,7 +12,6 @@ const items = [{
   icon: 'i-ph-browsers-bold',
   label: 'Web 框架'
 }]
-
 </script>
 
 <template>
@@ -76,4 +75,3 @@ const items = [{
     </template>
   </UTabs>
 </template>
-

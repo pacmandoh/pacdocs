@@ -20,10 +20,10 @@
 
 <script setup lang="ts">
 import { camelCase } from 'scule'
-import { fetchContentExampleCode } from '~/composables/useContentExamplesCode'
 import { transformContent } from '@nuxt/content/transformers'
-// @ts-ignore
+// @ts-expect-error missing type
 import { useShikiHighlighter } from '@nuxtjs/mdc/runtime'
+import { fetchContentExampleCode } from '~/composables/useContentExamplesCode'
 
 const props = defineProps({
   component: {

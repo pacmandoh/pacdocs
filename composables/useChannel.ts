@@ -6,7 +6,7 @@ const useGlobalState = createGlobalState(
     const unread = ref(0)
 
     // actions
-    function updateValue (nVal: number) {
+    function updateValue(nVal: number) {
       unread.value = nVal
     }
 
@@ -23,8 +23,8 @@ export const useChannel = () => {
     ChannelService.loadScript()
 
     ChannelService.boot({
-      'pluginKey': useRuntimeConfig().public.channelKey,
-      'hideChannelButtonOnBoot': true
+      pluginKey: useRuntimeConfig().public.channelKey,
+      hideChannelButtonOnBoot: true
     }, (_error, user) => {
       updateValue(user.unread)
     })
@@ -36,15 +36,12 @@ export const useChannel = () => {
     })
 
     // adapting theme change
-    //@ts-ignore
-    ChannelService.setAppearance(colorMode.preference)
+    ChannelService.setAppearance(colorMode.preference as ChannelService.Appearance)
     watch([colorMode, needChannel], () => {
-      //@ts-ignore
-      ChannelService.setAppearance(colorMode.preference)
+      ChannelService.setAppearance(colorMode.preference as ChannelService.Appearance)
     })
 
     // send unread message
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     ChannelService.onBadgeChanged((unread, _alert) => {
       updateValue(unread)
       // console.log(`Unread count: ${unread}, Alert count: ${alert}.`)

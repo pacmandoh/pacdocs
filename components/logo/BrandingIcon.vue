@@ -2,12 +2,12 @@
   <svg
     id="Layer_1"
     version="1.1"
-    xmlns="http://www.w3.org/2000/svg" 
-    xmlns:xlink="http://www.w3.org/1999/xlink" 
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
     x="0px"
     y="0px"
     viewBox="0 0 512 512"
-    style="enable-background:new 0 0 512 512;" 
+    style="enable-background:new 0 0 512 512;"
     xml:space="preserve"
   >
     <path
@@ -53,7 +53,7 @@
     <rect
       x="232.36"
       y="256.822"
-      transform="matrix(0.7071 0.7071 -0.7071 0.7071 262.2487 -90.9556)" 
+      transform="matrix(0.7071 0.7071 -0.7071 0.7071 262.2487 -90.9556)"
       width="17.115"
       height="28.525"
     />

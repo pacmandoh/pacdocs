@@ -20,7 +20,7 @@ const { footerLinks } = useNavigation()
         <template #right>
           <NewsletterForm />
           <BeiAn />
-          <Author />
+          <AppAuthor />
         </template>
       </UFooterColumns>
     </template>
@@ -28,8 +28,8 @@ const { footerLinks } = useNavigation()
     <template #left>
       <div class="flex-col flex items-center lg:items-start">
         <p class="text-gray-500 dark:text-gray-400 text-sm flex items-center gap-1">
-          Copyright 
-          <UIcon name="i-ph-copyright-duotone" /> 
+          Copyright
+          <UIcon name="i-ph-copyright-duotone" />
           {{ new Date().getFullYear() }} PacDocs - <NuxtLink class="hover:underline" to="https://github.com/pacmandoh/pacdocs/LICENSE" target="_blank">
             MIT License
           </NuxtLink>

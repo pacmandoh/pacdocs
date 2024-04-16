@@ -5,7 +5,7 @@ import { isWindows } from 'std-env'
 // Get PacDocs' Version
 import pkg from './package.json'
 
-function normalizedDirPath (path?: string) {
+function normalizedDirPath(path?: string) {
   if (!path || !isWindows) {
     return path
   }
@@ -59,6 +59,8 @@ export default defineNuxtConfig({
   extends: [
     process.env.NUXT_UI_PRO_PATH || '@nuxt/ui-pro'
   ],
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment, @typescript-eslint/prefer-ts-expect-error
+  // @ts-ignore Type circular reference
   modules: [
     'nuxt-content-twoslash',
     'nuxt-build-cache',
@@ -67,14 +69,19 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxtjs/plausible',
     '@nuxt/fonts',
+    '@nuxt/eslint',
     '@nuxthq/studio',
     '@vueuse/nuxt',
     'nuxt-og-image',
     '@morev/vue-transitions/nuxt',
     'modules/content-examples-code',
     () => {
-      if (docsSourceBase) { logger.success(`Using local docs from ${docsSourceBase}`) }
-      if (examplesSourceBase) { logger.success(`Using local examples from ${examplesSourceBase}`) }
+      if (docsSourceBase) {
+        logger.success(`Using local docs from ${docsSourceBase}`)
+      }
+      if (examplesSourceBase) {
+        logger.success(`Using local examples from ${examplesSourceBase}`)
+      }
     }
   ],
   runtimeConfig: {
@@ -141,7 +148,7 @@ export default defineNuxtConfig({
       // Ignore weird url from crawler on some modules readme
     },
     hooks: {
-      'prerender:generate' (route) {
+      'prerender:generate'(route) {
         // TODO: fix issue with recursive fetches with query string, e.g.
         if (route.route?.includes('&amp;')) {
           route.skip = true
@@ -203,6 +210,13 @@ export default defineNuxtConfig({
     enableInDev: false,
     // Do not throw when twoslash fails, the typecheck should be down in github.com/nuxt/nuxt's CI
     throws: false
+  },
+  eslint: {
+    config: {
+      stylistic: {
+        commaDangle: 'never'
+      }
+    }
   },
   typescript: {
     strict: false

@@ -9,6 +9,7 @@ dist
 .history
 .cache
 .data
+.eslintcache
 
 # Local Netlify folder
 .netlify
