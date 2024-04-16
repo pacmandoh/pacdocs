@@ -1,4 +1,4 @@
-title: The Nuxt Blog
+title: PacDocs 博客
 navigation.title: 博客
-description: 'Read the latest news about all Nuxt solutions, from framework announcements to integration tutorials.'
+description: '阅读有关所有 Nuxt 解决方案和 PacDocs 更新内容的最新消息 (包括各种教程!)，从 Nuxt 框架公告到集成教程以及编程语言等等...'
 navigation.icon: i-ph-newspaper

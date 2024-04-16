@@ -4,13 +4,13 @@ export default defineNuxtPlugin(() => {
   useNuxtApp().hook('app:mounted', () => {
     const { email, confirmation } = useRoute().query
     if (email && confirmation) {
-      $fetch('https://api.nuxt.com/newsletter/confirm', {
+      $fetch('https://api.crybabyaq.love/newsletter/confirm', {
         method: 'POST',
         body: { email, confirmation }
       }).then(() => {
-        toast.add({ title: 'Subscription succeed', description: 'You have been successfully subscribed to Nuxt newsletter.', color: 'green' })
+        toast.add({ title: '订阅成功!', description: '您已成功订阅 PacDocs 的最新简报', color: 'green' })
       }).catch((err) => {
-        toast.add({ title: 'Subscription failed', description: err.data?.message || '', color: 'red' })
+        toast.add({ title: '订阅失败!', description: err.data?.message || '', color: 'red' })
       })
     }
   })
