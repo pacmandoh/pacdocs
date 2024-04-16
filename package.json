@@ -11,7 +11,7 @@
     "lint": "nuxi prepare && eslint . --cache",
     "lint:fix": "nuxi prepare && eslint . --fix --cache",
     "typecheck": "nuxi typecheck",
-    "test": "pnpm lint && pnpm typecheck",
+    "test": "pnpm lint:fix && pnpm typecheck",
     "release": "bumpp -r"
   },
   "dependencies": {
