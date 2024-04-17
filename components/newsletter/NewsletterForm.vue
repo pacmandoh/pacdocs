@@ -19,7 +19,7 @@ function onSubmit() {
   if (loading.value) return
   loading.value = true
 
-  $fetch('https://api.nuxt.com/newsletter/subscribe', {
+  $fetch('https://api.crybabyaq.love/newsletter/subscribe', {
     method: 'POST',
     body: { email: email.value }
   }).then(() => {
