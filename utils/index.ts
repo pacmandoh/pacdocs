@@ -41,7 +41,20 @@ export const toRelativeDate = (date) => {
   }
 }
 
-export const slugify = (str: string) => str.toLowerCase().replace(/[^a-z0-9 -]/g, ' ').replace(/[\s-]+/g, '-')
+export const slugify = (str: string) => {
+  const chineseMap = {
+    '视觉设计': 'Visual Design',
+    'SVG 设计处理': 'SVG Design Processing',
+    '图像处理': 'Image Processing',
+    '数据处理': 'Data Analysis',
+    '数据可视化': 'Data Visualization',
+    '订阅制': 'Subscription Model'
+  }
+
+  const chineseRegex = new RegExp(Object.keys(chineseMap).join('|'), 'g')
+
+  return str.replace(chineseRegex, match => chineseMap[match]).toLowerCase().replace(/[^a-z0-9 -]/g, ' ').replace(/[\s-]+/g, '-')
+}
 
 export const random = (arr: Array<any>) => {
   return arr[Math.floor(Math.random() * arr.length)]
