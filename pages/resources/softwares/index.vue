@@ -53,7 +53,7 @@ await fetchList()
 
             <template #footer>
               <div class="flex gap-1">
-                <UBadge v-for="(platform, index) in software.platforms" :key="index" :label="platform.label" color="gray" />
+                <UBadge v-for="(platform, key) in software.platforms" :key="key" :label="platform.label" color="gray" />
               </div>
             </template>
           </UPageCard>
