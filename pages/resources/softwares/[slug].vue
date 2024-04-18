@@ -60,7 +60,10 @@ defineOgImageComponent('Docs', {
       <div class="flex flex-col lg:flex-row lg:items-center gap-3 mt-4">
         <div class="flex items-center gap-1.5">
           <UIcon name="i-mdi-license" class="w-5 h-5 flex-shrink-0" />
-          <span class="text-sm font-medium">{{ software.license }}</span>
+          <span v-for="(license, key) in software.licenses" :key="key" :class="[key !== software.licenses.length - 1 && 'flex gap-1.5 items-center']" class="text-sm font-medium">
+            <span>{{ license }}</span>
+            <UIcon v-if="key !== software.licenses.length - 1" name="i-ph-line-vertical-duotone" class="w-4 h-4 flex-shrink-0" />
+          </span>
         </div>
 
         <span v-if="software.twitter" class="hidden lg:block text-gray-500 dark:text-gray-400">&bull;</span>
