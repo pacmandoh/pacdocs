@@ -45,7 +45,7 @@ defineOgImageComponent('Docs', {
       </template>
 
       <div class="absolute top-[68px] -left-[64px] hidden lg:flex">
-        <UTooltip text="返回软件推荐主页">
+        <UTooltip text="推荐主页">
           <UButton
             to="/resources/softwares"
             icon="i-ph-caret-left"
@@ -59,8 +59,8 @@ defineOgImageComponent('Docs', {
 
       <div class="flex flex-col lg:flex-row lg:items-center gap-3 mt-4">
         <div class="flex items-center gap-1.5">
-          <UIcon name="i-ph-map-pin" class="w-5 h-5 flex-shrink-0" />
-          <span class="text-sm font-medium">{{ software.location }}</span>
+          <UIcon name="i-mdi-license" class="w-5 h-5 flex-shrink-0" />
+          <span class="text-sm font-medium">{{ software.license }}</span>
         </div>
 
         <span v-if="software.twitter" class="hidden lg:block text-gray-500 dark:text-gray-400">&bull;</span>
@@ -81,8 +81,15 @@ defineOgImageComponent('Docs', {
 
         <NuxtLink v-if="software.link" :to="software.link" target="_blank" class="flex items-center gap-1.5 hover:text-primary">
           <UIcon name="i-ph-link-duotone" class="w-5 h-5" />
-          <span class="text-sm font-medium">Website</span>
+          <span class="text-sm font-medium">官网</span>
         </NuxtLink>
+
+        <span v-if="software.platforms" class="hidden lg:block text-gray-500 dark:text-gray-400">&bull;</span>
+
+        <span v-for="(platform, index) in software.platforms" :key="index" class="flex items-center gap-1.5">
+          <UIcon name="i-ph-circle-wavy-check-duotone" class="w-5 h-5 text-green-500" />
+          <span class="text-sm font-medium">{{ platform }}</span>
+        </span>
       </div>
     </UPageHeader>
 
@@ -92,11 +99,11 @@ defineOgImageComponent('Docs', {
       </UPageBody>
 
       <template #right>
-        <UPageLinks v-if="software.groups?.length" title="Groups">
+        <UPageLinks v-if="software.groups?.length" title="分类">
           <div class="prose dark:prose-invert -ml-1.5">
             <ul class="space-y-3">
-              <li v-for="(service, index) in software.services" :key="index" class="text-sm text-gray-500 dark:text-gray-400">
-                {{ service }}
+              <li v-for="(group, index) in software.groups" :key="index" class="text-sm text-gray-500 dark:text-gray-400">
+                {{ group }}
               </li>
             </ul>
           </div>
@@ -105,7 +112,7 @@ defineOgImageComponent('Docs', {
         <div v-if="software.resources?.length">
           <UDivider type="dashed" class="my-6" />
 
-          <UPageLinks title="Resources" :links="software.resources" />
+          <UPageLinks title="资源" :links="software.resources" />
         </div>
       </template>
     </UPage>

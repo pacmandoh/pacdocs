@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const route = useRoute()
-const { filteredSoftwares, fetchList, groups, licenses } = useResourcesSoftwares()
+const { filteredSoftwares, fetchList, groups, licenses, platforms } = useResourcesSoftwares()
 
 const { data: page } = await useAsyncData(route.path, () => queryContent(route.path).findOne())
 
@@ -28,7 +28,7 @@ await fetchList()
     <UPage id="smooth" class="pt-20 -mt-20">
       <template #left>
         <UAside>
-          <UNavigationTree :links="[{ label: 'Groups', disabled: true, children: groups }, { label: 'Platform', disabled: true, children: licenses }]" />
+          <UNavigationTree :links="[{ label: '分类', disabled: true, children: groups }, { label: '平台', disabled: true, children: platforms }, { label: '许可证', disabled: true, children: licenses }]" />
         </UAside>
       </template>
 
@@ -52,7 +52,9 @@ await fetchList()
             </template>
 
             <template #footer>
-              <UBadge :label="software.platform.label" color="gray" />
+              <div class="flex gap-1">
+                <UBadge v-for="(platform, index) in software.platforms" :key="index" :label="platform.label" color="gray" />
+              </div>
             </template>
           </UPageCard>
         </UPageGrid>

@@ -17,5 +17,5 @@ export interface Software extends ParsedContent {
   licenses: Filter[]
   groups: Filter[]
   resources?: Link[]
-  platform: Filter
+  platforms: Filter[]
 }

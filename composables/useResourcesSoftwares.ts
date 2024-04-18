@@ -21,16 +21,14 @@ export const useResourcesSoftwares = () => {
           key: slugify(group),
           label: group
         })),
+        platforms: (software.platforms || []).map((platform: string) => ({
+          key: slugify(platform),
+          label: platform
+        })),
         licenses: (software.licenses || []).map((license: string) => ({
           key: slugify(license),
           label: license
-        })),
-        platform: software.platform
-          ? {
-              key: slugify(software.platform),
-              label: software.platform
-            }
-          : null
+        }))
       })) as Software[]
     }
     catch (e) {
@@ -40,11 +38,13 @@ export const useResourcesSoftwares = () => {
   }
 
   // Computed
-
   const filteredSoftwares = computed<Software[]>(() => {
     return [...softwares.value]
       .filter((software) => {
         if (selectedGroup.value && !software.groups.find(group => group.key === selectedGroup.value?.key)) {
+          return false
+        }
+        if (selectedPlatform.value && !software.platforms.find(platform => platform.key === selectedPlatform.value?.key)) {
           return false
         }
         if (selectedLicense.value && !software.licenses.find(license => license.key === selectedLicense.value?.key)) {
@@ -78,7 +78,7 @@ export const useResourcesSoftwares = () => {
           },
           state: { smooth: '#smooth' }
         },
-        click: (e) => {
+        click: (e: any) => {
           if (route.query.group !== group.key) {
             return
           }
@@ -88,35 +88,6 @@ export const useResourcesSoftwares = () => {
           router.replace({ query: { ...route.query, group: undefined } })
         }
       }))
-      .sort((a, b) => a.label.localeCompare(b.label))
-  })
-
-  const locations = computed<Filter[]>(() => {
-    return [...new Set(softwares.value.map(software => software.platform))]
-      .map((platform: any) => {
-        return {
-          key: platform.key,
-          label: platform.label,
-          exactQuery: true,
-          to: {
-            name: 'resources-softwares',
-            query: {
-              ...route.query,
-              platform: platform.key
-            },
-            state: { smooth: '#smooth' }
-          },
-          click: (e) => {
-            if (route.query.platform !== platform.key) {
-              return
-            }
-
-            e.preventDefault()
-
-            router.replace({ query: { ...route.query, platform: undefined } })
-          }
-        }
-      })
       .sort((a, b) => a.label.localeCompare(b.label))
   })
 
@@ -145,7 +116,7 @@ export const useResourcesSoftwares = () => {
             },
             state: { smooth: '#smooth' }
           },
-          click: (e) => {
+          click: (e: any) => {
             if (route.query.license !== license.key) {
               return
             }
@@ -159,8 +130,51 @@ export const useResourcesSoftwares = () => {
       .sort((a, b) => a.label.localeCompare(b.label))
   })
 
+  const platforms = computed<Filter[]>(() => {
+    const ids = new Set<string>()
+    const platforms = softwares.value.flatMap((software) => {
+      return software.platforms.filter((r) => {
+        if (ids.has(r.key as string)) {
+          return false
+        }
+        ids.add(r.key as string)
+        return true
+      })
+    })
+    return platforms
+      .map((platform) => {
+        return {
+          key: platform.key,
+          label: platform.label,
+          exactQuery: true,
+          to: {
+            name: 'resources-softwares',
+            query: {
+              ...route.query,
+              platform: platform.key
+            },
+            state: { smooth: '#smooth' }
+          },
+          click: (e: any) => {
+            if (route.query.platform !== platform.key) {
+              return
+            }
+
+            e.preventDefault()
+
+            router.replace({ query: { ...route.query, platform: undefined } })
+          }
+        }
+      })
+      .sort((a, b) => a.label.localeCompare(b.label))
+  })
+
   const selectedGroup = computed(() => {
     return groups.value.find(group => group.key === route.query.group)
+  })
+
+  const selectedPlatform = computed(() => {
+    return platforms.value.find(platform => platform.key === route.query.platform)
   })
 
   const selectedLicense = computed(() => {
@@ -172,11 +186,12 @@ export const useResourcesSoftwares = () => {
   return {
     fetchList,
     filteredSoftwares,
+    softwares,
     groups,
-    locations,
+    platforms,
     licenses,
     selectedGroup,
-    selectedLicense,
+    selectedPlatform,
     adPartner
   }
 }
