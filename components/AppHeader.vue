@@ -45,7 +45,7 @@ onMounted(() => {
 defineProps<{
   links?: Link[]
 }>()
-const { y } = useWindowScroll()
+const { y } = useSharedWindowScroll()
 const { width } = useSharedWindowSize()
 </script>
 

@@ -47,7 +47,7 @@ const vditorContent = `
       <template #panel>
         <div class="flex flex-col gap-y-1 p-2 bg-white dark:bg-gray-950">
           <div class="p-2 rounded-lg hover:bg-gray-100 hover:dark:bg-gray-900 cursor-pointer hover:text-gray-900 hover:dark:text-white dark:text-gray-200 text-gray-700">
-            <ToolPacGPTs>
+            <ToolPacGPTs button-size="sm" button-icon="i-simple-icons-openai" button-rounded="rounded-2xl">
               <template #text>
                 <span class="text-sm truncate">PacGPTs</span>
               </template>
@@ -55,12 +55,12 @@ const vditorContent = `
           </div>
 
           <div class="p-2 rounded-lg hover:bg-gray-100 hover:dark:bg-gray-900 cursor-pointer hover:text-gray-900 hover:dark:text-white dark:text-gray-200 text-gray-700">
-            <ToolResizedSlideover size="sm" icon="i-ph-notebook-fill" rounded="rounded-2xl" :overlay="true" :iframe="true">
+            <ToolResizeSlideover button-size="sm" button-icon="i-ph-notebook-fill" button-rounded="rounded-2xl">
               <ToolPacDown :content="vditorContent" />
               <template #text>
                 <span class="text-sm truncate">PacDown</span>
               </template>
-            </ToolResizedSlideover>
+            </ToolResizeSlideover>
           </div>
 
           <div class="p-2 rounded-lg hover:bg-gray-100 hover:dark:bg-gray-900 cursor-pointer hover:text-gray-900 hover:dark:text-white dark:text-gray-200 text-gray-700">

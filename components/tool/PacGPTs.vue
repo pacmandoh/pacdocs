@@ -1,6 +1,23 @@
+<script setup lang="ts">
+import type { ButtonSize } from '#ui/types'
+
+withDefaults(defineProps<{
+  buttonSize?: ButtonSize
+  buttonIcon?: string
+  buttonRounded?: string
+  buttonLabel?: string
+  closePosition?: string
+}>(), {
+  buttonSize: 'md',
+  buttonIcon: null,
+  buttonRounded: null,
+  buttonLabel: null
+})
+</script>
+
 <template>
   <div>
-    <ToolResizedSlideover :iframe="true" size="sm" icon="i-simple-icons-openai" rounded="rounded-2xl" :overlay="true">
+    <ToolResizeSlideover :button-size="buttonSize" :button-icon="buttonIcon" :button-rounded="buttonRounded" :button-label="buttonLabel">
       <template #text>
         <slot name="text" />
       </template>
@@ -13,6 +30,6 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen
       />
-    </ToolResizedSlideover>
+    </ToolResizeSlideover>
   </div>
 </template>

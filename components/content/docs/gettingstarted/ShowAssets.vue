@@ -1,12 +1,10 @@
 <template>
   <ClientOnly placeholder="PacAssets">
     <span class="inline-block">
-      <ToolResizedSlideover
-        :iframe="true"
-        size="sm"
-        icon="i-ph-download-fill"
-        rounded="rounded-2xl"
-        :overlay="true"
+      <ToolResizeSlideover
+        button-size="sm"
+        button-icon="i-ph-download-fill"
+        button-rounded="rounded-2xl"
         close-postion="top-14 left-1 md:left-2"
       >
         <template #text>
@@ -22,7 +20,7 @@
           allowfullscreen
           class="rounded-2xl"
         />
-      </ToolResizedSlideover>
+      </ToolResizeSlideover>
     </span>
   </ClientOnly>
 </template>
