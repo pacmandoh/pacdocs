@@ -64,18 +64,7 @@ const config = useRuntimeConfig().public
       <template #links>
         <HomeMagneticButton label="开始" to="/docs" />
 
-        <ToolResizedSlideover size="xl" icon="i-simple-icons-openai" rounded="rounded-xl" label="PacGPTs | ChatAI" :iframe="true">
-          <iframe
-            width="100%"
-            height="100%"
-            src="https://chatgpt.crybabyaq.love/"
-            title="ChatAI(GPT, Gemini Pro...) assistant for PacDocs"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-            class="rounded-2xl"
-          />
-        </ToolResizedSlideover>
+        <ToolPacGPTs button-size="xl" button-icon="i-simple-icons-openai" button-rounded="rounded-xl" button-label="PacGPTs | ChatAI" />
       </template>
 
       <ULandingLogos :title="page?.logos?.title" class="mt-32 text-gray-500 dark:text-gray-400">

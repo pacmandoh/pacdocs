@@ -11,7 +11,7 @@ const hidden = -40
 const el = ref<HTMLElement | null>(null)
 const { height } = useSharedWindowSize()
 const { height: elHeight } = useElementSize(el)
-const { y: scrollY } = useWindowScroll()
+const { y: scrollY } = useSharedWindowScroll()
 const isHovered = useElementHover(el)
 const { unread } = useChannel()
 
@@ -74,12 +74,12 @@ if (isTouchMoblie) {
   >
     <div class="flex flex-row items-center rounded-2xl shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-gray-700 text-gray-900 dark:text-white bg-white hover:bg-gray-50 disabled:bg-white dark:bg-gray-900 dark:hover:bg-gray-800/50 dark:disabled:bg-gray-900 focus-visible:ring-2 focus-visible:ring-primary-500 dark:focus-visible:ring-primary-400 py-2 pl-2">
       <div class="grid gap-2 grid-rows-3">
-        <ToolPacGPTs />
+        <ToolPacGPTs button-size="sm" button-icon="i-simple-icons-openai" button-rounded="rounded-2xl" />
 
         <div>
-          <ToolResizedSlideover size="sm" icon="i-ph-notebook-fill" rounded="rounded-2xl" :overlay="true" :iframe="true">
+          <ToolResizeSlideover button-size="sm" button-icon="i-ph-notebook-fill" button-rounded="rounded-2xl">
             <ToolPacDown :content="vditorContent" />
-          </ToolResizedSlideover>
+          </ToolResizeSlideover>
         </div>
 
         <ToolChannel />
