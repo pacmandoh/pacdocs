@@ -15,4 +15,4 @@ cta:
     - label: '探索示例'
       size: 'lg'
       color: 'white'
-      to: '/examples'
+      to: '/docs/examples'

@@ -5,7 +5,7 @@
       :class="[{ 'p-4': padding, 'rounded-b-md': !hasCode, 'border-b-0': hasCode, 'not-prose': !prose }, backgroundClass, extraClass]"
     >
       <template v-if="component">
-        <iframe v-if="iframe" :src="`/examples/${component}`" v-bind="iframeProps" :class="backgroundClass" class="w-full" />
+        <iframe v-if="iframe" :src="`/docs/examples/${component}`" v-bind="iframeProps" :class="backgroundClass" class="w-full" />
         <component :is="camelName" v-else v-bind="componentProps" :class="componentClass" />
       </template>
 
