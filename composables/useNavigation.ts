@@ -392,11 +392,11 @@ const _useNavigation = () => {
 
     return link
   }).filter(Boolean), {
-    label: 'Design Kit',
+    label: '设计套件',
     icon: 'i-ph-palette-duotone',
     to: '/design-kit'
   }, {
-    label: 'Newsletter',
+    label: '资讯',
     icon: 'i-ph-envelope-simple-duotone',
     to: '/newsletter'
   }])
@@ -427,7 +427,7 @@ const _useNavigation = () => {
         }))
     }
   }, {
-    key: 'database-search',
+    key: 'databases-search',
     label: '数据库',
     search: async (q) => {
       if (!q) {
@@ -455,8 +455,36 @@ const _useNavigation = () => {
         }))
     }
   }, {
+    key: 'softwares-search',
+    label: '软件推荐',
+    search: async (q) => {
+      if (!q) {
+        return []
+      }
+
+      const { softwares, fetchList } = useResourcesSoftwares()
+      if (!softwares.value.length) {
+        await fetchList()
+      }
+
+      return softwares.value
+        .filter(software => ['title'].map(field => software[field]).filter(Boolean).some(value => value.search(searchTextRegExp(q)) !== -1))
+        .map(software => ({
+          id: `software-${software._path}`,
+          label: software.title,
+          suffix: software.description,
+          icon: software.icon,
+          avatar: software.logo.dark
+            ? {
+                src: software.logo.dark
+              }
+            : undefined,
+          to: software._path
+        }))
+    }
+  }, {
     key: 'articles-search',
-    label: 'Articles',
+    label: '文章',
     search: async (q: string) => {
       if (!q) {
         return []
