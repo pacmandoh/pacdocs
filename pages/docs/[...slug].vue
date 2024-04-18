@@ -87,6 +87,11 @@ const ecosystemLinks = [{
   label: 'Nuxt 课程',
   to: 'https://masteringnuxt.com/nuxt3?ref=nuxt',
   target: '_blank'
+}, {
+  icon: 'i-ph-presentation-duotone',
+  label: 'Nuxt Nation',
+  to: 'https://nuxtnation.com',
+  target: '_blank'
 }]
 
 const title = page.value.head?.title || page.value.title
