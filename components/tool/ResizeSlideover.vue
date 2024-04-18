@@ -14,7 +14,7 @@ const props = withDefaults(defineProps<{
   buttonLabel?: string
   closePosition?: string
   side?: 'left' | 'right'
-  transition: boolean
+  transition?: boolean
   resizeOptions?: ResizeOptions
 }>(), {
   overlay: true,
