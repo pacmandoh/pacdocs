@@ -1,4 +1,4 @@
-// import { ofetch } from 'ofetch'
+import { ofetch } from 'ofetch'
 import { logger } from '@nuxt/kit'
 // WINDOWS
 import { isWindows } from 'std-env'
@@ -146,6 +146,7 @@ export default defineNuxtConfig({
     prerender: {
       // failOnError: false
       // Ignore weird url from crawler on some modules readme
+      ignore: ['/modules/%3C/span', '/modules/%253C/span', '/docs/getting-started/</span', '/docs/getting-started/%3C/span']
     },
     hooks: {
       'prerender:generate'(route) {
@@ -153,6 +154,15 @@ export default defineNuxtConfig({
         if (route.route?.includes('&amp;')) {
           route.skip = true
         }
+      }
+    }
+  },
+  hooks: {
+    async 'prerender:routes'(ctx) {
+      // Add Nuxt 2 modules to the prerender list
+      const { modules } = await ofetch<{ modules: [] }>('https://api.nuxt.com/modules?version=2').catch(() => ({ modules: [] }))
+      for (const module of modules) {
+        ctx.routes.add(`/modules/${module.name}`)
       }
     }
   },
@@ -201,7 +211,6 @@ export default defineNuxtConfig({
       }
     }
   },
-
   twoslash: {
     floatingVueOptions: {
       classMarkdown: 'prose prose-primary dark:prose-invert'
@@ -231,6 +240,8 @@ export default defineNuxtConfig({
     strict: false
   },
   experimental: {
+    headNext: true,
+    sharedPrerenderData: true,
     appManifest: true
   },
   devtools: {

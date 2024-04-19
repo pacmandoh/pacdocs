@@ -4,7 +4,6 @@ import type { Config } from 'tailwindcss'
 export default <Partial<Config>>{
   theme: {
     extend: {
-      // 增加动画效果
       keyframes: {
         fadecolorB: {
           '0%, 16.667%, 100%': { opacity: '1' },
