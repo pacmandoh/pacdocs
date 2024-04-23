@@ -1,8 +1,8 @@
 <script setup lang="ts">
 const props = withDefaults(defineProps<{
   label: string
-  lineType?: string
-  orientation?: string
+  lineType?: 'solid' | 'dotted' | 'dashed'
+  orientation?: 'horizontal' | 'vertical'
   size?: string
   wrapper?: string
   icon?: string
