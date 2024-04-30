@@ -63,8 +63,8 @@ importers:
         specifier: ^1.1.0
         version: 1.1.0(focus-trap@7.5.4)(nuxt@3.11.2(@parcel/watcher@2.4.1)(@types/node@20.12.7)(@unocss/reset@0.59.4)(encoding@0.1.13)(eslint@9.1.1)(floating-vue@5.2.2(@nuxt/kit@3.11.2(rollup@4.15.0))(vue@3.4.26(typescript@5.4.5)))(fuse.js@6.6.2)(ioredis@5.4.1)(optionator@0.9.3)(rollup@4.15.0)(sass@1.75.0)(terser@5.30.3)(typescript@5.4.5)(unocss@0.59.4(@unocss/webpack@0.59.4(rollup@4.15.0)(webpack@5.91.0))(postcss@8.4.38)(rollup@4.15.0)(vite@5.2.10(@types/node@20.12.7)(sass@1.75.0)(terser@5.30.3)))(vite@5.2.10(@types/node@20.12.7)(sass@1.75.0)(terser@5.30.3))(vue-tsc@2.0.15(typescript@5.4.5)))(rollup@4.15.0)(vite@5.2.10(@types/node@20.12.7)(sass@1.75.0)(terser@5.30.3))(vue@3.4.26(typescript@5.4.5))
       '@nuxthq/studio':
-        specifier: ^1.0.13
-        version: 1.0.13(rollup@4.15.0)
+        specifier: ^1.0.14
+        version: 1.0.15(rollup@4.15.0)
       '@nuxtjs/html-validator':
         specifier: ^1.8.0
         version: 1.8.0(rollup@4.15.0)(vitest@1.5.3(@types/node@20.12.7)(sass@1.75.0)(terser@5.30.3))
@@ -1058,8 +1058,8 @@ packages:
     peerDependencies:
       vue: ^3.3.4
 
-  '@nuxthq/studio@1.0.13':
-    resolution: {integrity: sha512-C4j+K53om5Kj5xLrehWEbnDJlid5tDsHP7QdOIsK550dHOxPmvaXMH4YxsSNU8cDppMheMbN59zdYhQaQfko6g==}
+  '@nuxthq/studio@1.0.15':
+    resolution: {integrity: sha512-FdlSpNk+mCZrA1a3SiZIEm7JFx2pLUtAJfwPfGkllF6vTpCB6Jm1zTnRPw/i3dd20AZ5Ch/P9TOzE61km39NTA==}
 
   '@nuxtjs/color-mode@3.4.0':
     resolution: {integrity: sha512-rS51nG3zW8ksOwNubIP3BPQ+vBL0r2M6td1kkB/VaR1e1uVtNfWlBPfZjb604bgNCE2AeRNqaI0CrxkfnQ6h6Q==}
@@ -8354,7 +8354,7 @@ snapshots:
       - vti
       - vue-tsc
 
-  '@nuxthq/studio@1.0.13(rollup@4.15.0)':
+  '@nuxthq/studio@1.0.15(rollup@4.15.0)':
     dependencies:
       '@nuxt/kit': 3.11.2(rollup@4.15.0)
       defu: 6.1.4
