@@ -39,8 +39,8 @@ importers:
         specifier: ^1.1.9
         version: 1.1.9
       '@iconify-json/tabler':
-        specifier: ^1.1.110
-        version: 1.1.110
+        specifier: ^1.1.111
+        version: 1.1.111
       '@iconify-json/uil':
         specifier: ^1.1.8
         version: 1.1.8
@@ -777,8 +777,8 @@ packages:
   '@iconify-json/solar@1.1.9':
     resolution: {integrity: sha512-BcWzZqA02BiQduYizqU/J4v4RNs0MkjZUGpMbejpozH8YQSt3+S/LfV6zfVRonx/2DhXTVSqiLa1abDRAZtojQ==}
 
-  '@iconify-json/tabler@1.1.110':
-    resolution: {integrity: sha512-+0TbyNeQpFI2r+bjtbazGrpGskI3c9NTii/6HhWTS+/d5+PiLs6+wWJW0M9AU2ykew7zdMKB2WtyczFyjYzZIQ==}
+  '@iconify-json/tabler@1.1.111':
+    resolution: {integrity: sha512-0qCmOCUUgcBXtvSUwaKMM4yum6XNrjPLxZBwueRPn14pAmWhS7Un15chxJ+ULfE1hBaVM7gSPIYz4JAUOo28Aw==}
 
   '@iconify-json/uil@1.1.8':
     resolution: {integrity: sha512-zkWB8XImzb1gfi5kN9xAfDXF5OqzxbKvtZq9xRUplEWEJYOoDB1RpbbQpCwJQ41j8Nf0ag0LFJr++qhYmvxftQ==}
@@ -7563,7 +7563,7 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify-json/tabler@1.1.110':
+  '@iconify-json/tabler@1.1.111':
     dependencies:
       '@iconify/types': 2.0.0
 
@@ -7862,7 +7862,7 @@ snapshots:
       '@iconify-json/carbon': 1.1.31
       '@iconify-json/logos': 1.1.42
       '@iconify-json/ri': 1.1.20
-      '@iconify-json/tabler': 1.1.110
+      '@iconify-json/tabler': 1.1.111
       '@nuxt/devtools': 1.2.0(@unocss/reset@0.59.4)(floating-vue@5.2.2(@nuxt/kit@3.11.2(rollup@4.15.0))(vue@3.4.26(typescript@5.4.5)))(fuse.js@6.6.2)(nuxt@3.11.2(@parcel/watcher@2.4.1)(@types/node@20.12.7)(@unocss/reset@0.59.4)(encoding@0.1.13)(eslint@9.1.1)(floating-vue@5.2.2(@nuxt/kit@3.11.2(rollup@4.15.0))(vue@3.4.26(typescript@5.4.5)))(fuse.js@6.6.2)(ioredis@5.4.1)(optionator@0.9.3)(rollup@4.15.0)(sass@1.75.0)(terser@5.30.3)(typescript@5.4.5)(unocss@0.59.4(@unocss/webpack@0.59.4(rollup@4.15.0)(webpack@5.91.0))(postcss@8.4.38)(rollup@4.15.0)(vite@5.2.10(@types/node@20.12.7)(sass@1.75.0)(terser@5.30.3)))(vite@5.2.10(@types/node@20.12.7)(sass@1.75.0)(terser@5.30.3))(vue-tsc@2.0.16(typescript@5.4.5)))(rollup@4.15.0)(unocss@0.59.4(@unocss/webpack@0.59.4(rollup@4.15.0)(webpack@5.91.0))(postcss@8.4.38)(rollup@4.15.0)(vite@5.2.10(@types/node@20.12.7)(sass@1.75.0)(terser@5.30.3)))(vite@5.2.10(@types/node@20.12.7)(sass@1.75.0)(terser@5.30.3))(vue@3.4.26(typescript@5.4.5))
       '@nuxt/devtools-kit': 1.2.0(nuxt@3.11.2(@parcel/watcher@2.4.1)(@types/node@20.12.7)(@unocss/reset@0.59.4)(encoding@0.1.13)(eslint@9.1.1)(floating-vue@5.2.2(@nuxt/kit@3.11.2(rollup@4.15.0))(vue@3.4.26(typescript@5.4.5)))(fuse.js@6.6.2)(ioredis@5.4.1)(optionator@0.9.3)(rollup@4.15.0)(sass@1.75.0)(terser@5.30.3)(typescript@5.4.5)(unocss@0.59.4(@unocss/webpack@0.59.4(rollup@4.15.0)(webpack@5.91.0))(postcss@8.4.38)(rollup@4.15.0)(vite@5.2.10(@types/node@20.12.7)(sass@1.75.0)(terser@5.30.3)))(vite@5.2.10(@types/node@20.12.7)(sass@1.75.0)(terser@5.30.3))(vue-tsc@2.0.16(typescript@5.4.5)))(rollup@4.15.0)(vite@5.2.10(@types/node@20.12.7)(sass@1.75.0)(terser@5.30.3))
       '@nuxt/kit': 3.11.2(rollup@4.15.0)
