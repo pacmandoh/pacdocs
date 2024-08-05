@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@channel.io/channel-web-sdk-loader':
-        specifier: ^1.1.7
-        version: 1.1.7
+        specifier: ^2.0.0
+        version: 2.0.0
       '@iconify-json/devicon':
         specifier: ^1.1.44
         version: 1.1.44
@@ -509,8 +509,8 @@ packages:
   '@capsizecss/unpack@2.1.0':
     resolution: {integrity: sha512-k+wAZylHNaBwfcGGeKV+tTf6G0Zd4SyiTMmzlVFKkkBVV70DzwC7KOtmV/ojLbjwRT4QSPcMvjmiws309CSPgQ==}
 
-  '@channel.io/channel-web-sdk-loader@1.1.7':
-    resolution: {integrity: sha512-wIHvOQpYTPpHGg0mS/CW/WKNONF1phmhHlGpfXGbHai81OgeUiyLtkwuNaiM7bR4QF8uIB+p0RrM/evn2Zb7pw==}
+  '@channel.io/channel-web-sdk-loader@2.0.0':
+    resolution: {integrity: sha512-Z8DDpf2lAaYr/3aAnwQtxg0L8MYWgi/hhGV8c5/SLCV6Fx5Gssj7mfyHHrCVC315B0icmLYqZsXBlmbf6cN8Jg==}
 
   '@cliqz/adblocker-content@1.27.1':
     resolution: {integrity: sha512-xsQDsjoSsJna/2JI0xj9VTY/WFvFBTDb6lcHDr4gmTs6Lb+4VsWjIZSLO3WKHEOen/9Qk6dXKWtJO0fJyTQFbQ==}
@@ -5789,7 +5789,7 @@ packages:
   puppeteer@21.11.0:
     resolution: {integrity: sha512-9jTHuYe22TD3sNxy0nEIzC7ZrlRnDgeX3xPkbS7PnbdwYjl2o/z/YuCrRBwezdKpbTDTJ4VqIggzNyeRcKq3cg==}
     engines: {node: '>=16.13.2'}
-    deprecated: < 22.6.4 is no longer supported
+    deprecated: < 22.8.2 is no longer supported
     hasBin: true
 
   querystringify@2.2.0:
@@ -7747,7 +7747,7 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  '@channel.io/channel-web-sdk-loader@1.1.7': {}
+  '@channel.io/channel-web-sdk-loader@2.0.0': {}
 
   '@cliqz/adblocker-content@1.27.1':
     dependencies:
