@@ -15,7 +15,7 @@
     "release": "bumpp -r"
   },
   "dependencies": {
-    "@channel.io/channel-web-sdk-loader": "^1.1.7",
+    "@channel.io/channel-web-sdk-loader": "^2.0.0",
     "@iconify-json/devicon": "^1.1.44",
     "@iconify-json/devicon-plain": "^1.1.42",
     "@iconify-json/heroicons": "^1.1.21",
