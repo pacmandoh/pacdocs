@@ -4,11 +4,14 @@
   "packageManager": "pnpm@10.5.2",
   "homepage": "https://pacdocs.cn",
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "dev": "nuxi dev",
+    "build": "nuxi build",
+    "generate": "nuxi generate",
+    "preview": "nuxi preview",
+    "postinstall": "nuxi prepare",
+    "lint": "eslint . --cache",
+    "typecheck": "nuxi typecheck",
+    "test": "pnpm lint && pnpm typecheck"
   },
   "dependencies": {
     "@nuxt/content": "^3.2.2",
