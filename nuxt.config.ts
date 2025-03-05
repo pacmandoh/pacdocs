@@ -45,7 +45,8 @@ export default defineNuxtConfig({
   // extenal modules
   modules: [
     '@nuxt/content', // CMS
-    '@nuxt/ui-pro'
+    '@nuxt/ui-pro',
+    '@nuxt/eslint'
   ],
 
   compatibilityDate: '2024-11-01',
