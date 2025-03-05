@@ -1,0 +1,32 @@
+{
+  "name": "pacdocs",
+  "version": "2.1.0",
+  "packageManager": "pnpm@10.5.2",
+  "homepage": "https://pacdocs.cn",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@nuxt/content": "^3.2.2",
+    "@nuxt/ui-pro": "3.0.0-beta.2",
+    "nuxt": "^3.15.4",
+    "ofetch": "^1.4.1"
+  },
+  "devDependencies": {
+    "@nuxt/kit": "^3.15.4",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@parcel/watcher",
+      "better-sqlite3",
+      "esbuild",
+      "vue-demi"
+    ]
+  }
+}
