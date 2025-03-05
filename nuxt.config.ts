@@ -1,4 +1,4 @@
-import {ofetch} from 'ofetch'
+// import {ofetch} from 'ofetch'
 import {logger} from '@nuxt/kit'
 
 /**
@@ -46,7 +46,15 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/content', // CMS
     '@nuxt/ui-pro',
-    '@nuxt/eslint'
+    '@nuxt/eslint',
+    () => {
+      if (docsSourceBase) {
+        logger.success(`Using local docs from ${docsSourceBase}`)
+      }
+      if (examplesSourceBase) {
+        logger.success(`Using local examples from ${examplesSourceBase}`)
+      }
+    }
   ],
 
   compatibilityDate: '2024-11-01',
